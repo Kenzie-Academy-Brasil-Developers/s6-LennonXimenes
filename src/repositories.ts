@@ -5,7 +5,7 @@ import { Address, Category, RealEstate, Schedule, User } from "./entities";
 const userRepo: iUsersRepo = AppDataSource.getRepository(User);
 const categoryRepo: iCategoryRepo = AppDataSource.getRepository(Category);
 const addressRepo: iAddressRepo = AppDataSource.getRepository(Address);
-const realEstateRepo: iRealEstateRepo = AppDataSource.getRepository(RealEstate);
+const realEstateRepo: iRealEstateRepo | any = AppDataSource.getRepository(RealEstate);
 const scheduleRepo: iScheduleRepo = AppDataSource.getRepository(Schedule);
 
 

@@ -6,6 +6,6 @@ import loginSession from "./session.controller";
 import createCategory from "./category.controller";
 import readCategory from "./category.controller";
 import createRealEstate from "./realEstate.cotroller";
+import readRealEstate from "./realEstate.cotroller";
 
-
-export default { createUser, readUser, updateUser, deleteUser, loginSession, createCategory, readCategory, createRealEstate };
+export default { createUser, readUser, updateUser, deleteUser, loginSession, createCategory, readCategory, createRealEstate, readRealEstate };

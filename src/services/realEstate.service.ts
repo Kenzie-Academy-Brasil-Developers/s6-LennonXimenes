@@ -1,5 +1,7 @@
+import { AppDataSource } from "../data-source";
 import { Address, Category, RealEstate } from "../entities";
-import { iRealEstateCreate } from "../interfaces";
+import { AppError } from "../errors";
+import { iRealEstateCreate, iRealEstateReturn } from "../interfaces";
 import { addressRepo, categoryRepo, realEstateRepo } from "../repositories";
 
 const createRealEstate = async (payload: iRealEstateCreate): Promise<RealEstate> => {
@@ -15,4 +17,14 @@ const createRealEstate = async (payload: iRealEstateCreate): Promise<RealEstate>
     return await realEstateRepo.save(RealEstate);
 };
 
-export default { createRealEstate };
+const readRealEstate = async (): Promise<iRealEstateReturn> => {
+    const realEstate = await realEstateRepo.findOne({
+        relations: {
+            
+        }
+    })
+
+    return realEstateRepo.parse(realEstate);
+};
+
+export default { createRealEstate, readRealEstate };

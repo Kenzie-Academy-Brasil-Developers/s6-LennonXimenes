@@ -5,7 +5,7 @@ import { addressSchema } from "./address.schema";
 const realEstateSchema = z.object({
     id: z.number().positive(),
     sold: z.boolean().default(false),
-    value: z.number().positive().default(0),
+    value: z.number().positive().default(0).or(z.string()),
     size: z.number().positive(),
     createdAt: z.string(),
     updatedAt: z.string()
