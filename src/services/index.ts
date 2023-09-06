@@ -8,5 +8,6 @@ import readCategory from "./category.service";
 import createRealEstate from "./realEstate.service";
 import readRealEstate from "./realEstate.service";
 import retrieveCategory from "./category.service";
+import createSchedule from "./schedule.service";
 
-export default { createUser, readUser, updateUser, deleteUser, loginSession, createCategory, readCategory, createRealEstate, readRealEstate, retrieveCategory };
+export default { createUser, readUser, updateUser, deleteUser, loginSession, createCategory, readCategory, createRealEstate, readRealEstate, retrieveCategory, createSchedule };
