@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { User } from "../entities";
-import { userRepo } from "../repositories";
+import { Category, User } from "../entities";
+import { categoryRepo, userRepo } from "../repositories";
 import { AppError } from "../errors";
 
 export const verifyId = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

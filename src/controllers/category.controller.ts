@@ -15,4 +15,11 @@ const readCategory = async (req: Request, res: Response): Promise<Response> => {
     return res.status(200).json(categories);
 };
 
-export default { createCategory, readCategory };
+const retrieveCategory = async (req: Request, res: Response): Promise<Response> => {
+    const categoryId: number = res.locals.category.id
+
+    const retrieve: Category = await categoryService.retrieveCategory(categoryId);
+
+    return res.status(200).json(retrieve);
+}
+export default { createCategory, readCategory, retrieveCategory };

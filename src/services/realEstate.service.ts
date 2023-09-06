@@ -1,7 +1,7 @@
 import { AppDataSource } from "../data-source";
 import { Address, Category, RealEstate } from "../entities";
 import { AppError } from "../errors";
-import { iRealEstateCreate, iRealEstateReturn } from "../interfaces";
+import { iRealEstateCreate, iRealEstateRead, iRealEstateReturn } from "../interfaces";
 import { addressRepo, categoryRepo, realEstateRepo } from "../repositories";
 
 const createRealEstate = async (payload: iRealEstateCreate): Promise<RealEstate> => {
@@ -18,13 +18,10 @@ const createRealEstate = async (payload: iRealEstateCreate): Promise<RealEstate>
 };
 
 const readRealEstate = async (): Promise<iRealEstateReturn> => {
-    const realEstate = await realEstateRepo.findOne({
-        relations: {
-            
-        }
-    })
+    const realEstate: iRealEstateRead | any = await
+        realEstateRepo.createQueryBuilder("realEstate").leftJoinAndSelect("realEstate.address", "address").getMany();
 
-    return realEstateRepo.parse(realEstate);
+    return realEstate;
 };
 
 export default { createRealEstate, readRealEstate };

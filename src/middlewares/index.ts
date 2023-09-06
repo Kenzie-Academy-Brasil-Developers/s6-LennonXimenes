@@ -6,5 +6,6 @@ import { verifyToken } from "./verifyToken.middleware";
 import { verifyPermition } from "./verifyPermition.middleware";
 import { verifyName } from "./verifyName.middleware";
 import { verifyAddress } from "./verifyAddress.middleware";
+import { verifyCategory } from "./verifyCategory.middleware";
 
-export default { handleErrors, validateBody, verifyEmail, verifyId, verifyToken, verifyPermition, verifyName, verifyAddress };
+export default { handleErrors, validateBody, verifyEmail, verifyId, verifyToken, verifyPermition, verifyName, verifyAddress, verifyCategory };

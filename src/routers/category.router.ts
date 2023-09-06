@@ -14,3 +14,7 @@ categoryRouter.post("",
 );
 
 categoryRouter.get("", categoryController.readCategory);
+
+categoryRouter.get("/:id/realEstate",
+    middlewares.verifyCategory,
+    categoryController.retrieveCategory);

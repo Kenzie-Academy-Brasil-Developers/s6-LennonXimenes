@@ -7,5 +7,6 @@ import createCategory from "./category.controller";
 import readCategory from "./category.controller";
 import createRealEstate from "./realEstate.cotroller";
 import readRealEstate from "./realEstate.cotroller";
+import retrieveCategory from "./category.controller";
 
-export default { createUser, readUser, updateUser, deleteUser, loginSession, createCategory, readCategory, createRealEstate, readRealEstate };
+export default { createUser, readUser, updateUser, deleteUser, loginSession, createCategory, readCategory, createRealEstate, readRealEstate, retrieveCategory };
