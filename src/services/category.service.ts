@@ -16,6 +16,8 @@ const readCategory = async (): Promise<iCategoryRead> => {
 const retrieveCategory = async (categoryId: number): Promise<Category | any> => {
     const category: Category | any = await
         categoryRepo.createQueryBuilder("categories").leftJoinAndSelect("categories.realEstate", "realEstate").where("categories.id = :categoryId", { categoryId: categoryId }).getOne();
+
+        return category;
 };
 
 export default { createCategory, readCategory, retrieveCategory };

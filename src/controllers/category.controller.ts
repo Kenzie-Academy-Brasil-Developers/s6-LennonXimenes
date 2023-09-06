@@ -16,9 +16,9 @@ const readCategory = async (req: Request, res: Response): Promise<Response> => {
 };
 
 const retrieveCategory = async (req: Request, res: Response): Promise<Response> => {
-    const categoryId: number = res.locals.category.id
+    const id: number = res.locals.foundId.id
 
-    const retrieve: Category = await categoryService.retrieveCategory(categoryId);
+    const retrieve: Category = await categoryService.retrieveCategory(id);
 
     return res.status(200).json(retrieve);
 }

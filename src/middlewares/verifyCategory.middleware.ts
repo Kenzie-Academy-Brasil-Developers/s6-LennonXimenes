@@ -6,11 +6,13 @@ import { Category } from "../entities";
 export const verifyCategory = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const id: number = Number(req.params.id);
 
-    const category: Category | null = await categoryRepo.findOneBy({ id });
+    const foundId: Category | null = await categoryRepo.findOneBy({ id });
 
-    if (!category) {
+    if (!foundId) {
         throw new AppError("Category not found", 404);
     }
+
+    res.locals.foundId = foundId;
 
     return next();
 };
